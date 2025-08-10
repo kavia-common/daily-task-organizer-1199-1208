@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TODO PAGE - Static Preview</title>
+  <meta name="viewport" content="width=414, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      min-width: 414px;
+      min-height: 896px;
+      color: #222;
+    }
+    .status-bar {
+      width: 429px; height: 44px;
+      background: url("https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fcae15dd-7ccb-4b18-8dbf-e76f0395efeb");
+      background-size: cover; 
+      margin: 0 auto;
+      position: relative;
+    }
+    .app-bar {
+      width: 414px; height: 118px;
+      background: url("https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/9224f1cc-efe2-4955-adf3-2bf110951bdd");
+      background-size: cover;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 16px;
+    }
+    .app-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin-bottom: 30px;
+      letter-spacing: 2px;
+    }
+    .calendar-icon {
+      width: 60px; height: 60px;
+      margin-bottom: 30px;
+    }
+    .todos-section {
+      width: 400px;
+      margin: 25px auto 0;
+    }
+    .todo-bar {
+      display: flex;
+      align-items: center;
+      background: #DFF6FF;
+      border-radius: 15px;
+      margin-bottom: 12px;
+      height: 82px;
+      box-shadow: 0 2px 4px rgba(64,64,64,0.07);
+      padding: 0 21px; /* Left/Right gap inside */
+    }
+    .todo-titles {
+      flex: 1;
+    }
+    .todo-title {
+      font-size: 19px;
+      font-weight: 600;
+      color: #1976D2;
+      margin-bottom: 3px;
+    }
+    .todo-sub {
+      font-size: 14px;
+      color: #1976d280;
+    }
+    .todo-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .todo-action-icon {
+      width: 25px;
+      height: 25px;
+      object-fit: contain;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    .add-todo-btn {
+      position: fixed;
+      right: 32px;
+      bottom: 100px;
+      z-index: 10;
+      width: 70px; height: 70px;
+      background: none;
+      border: none;
+      border-radius: 50%;
+      padding: 0;
+      cursor: pointer;
+      box-shadow: 0 2px 38px 10px #aaa6;
+    }
+    .add-todo-img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+    }
+    .nav-bar {
+      width: 414px; height: 68px;
+      background: url("https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d16cc63a-86db-4681-88ee-9ebe25bd243d");
+      background-size: cover;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+    .nav-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-txt {
+      font-size: 14px;
+      color: #1976D2;
+      font-weight: 600;
+      padding: 0 7px;
+    }
+    .nav-txt-completed {
+      color: #424242;
+    }
+    .nav-icon {
+      width: 30px; height: 30px;
+    }
+    @media (max-width: 500px) {
+      .status-bar, .app-bar, .nav-bar, .todos-section { transform: scale(0.95);}
+    }
+  </style>
+</head>
+<body>
+  <div class="status-bar"></div>
+  <div class="app-bar">
+    <div class="app-title">TODO APP</div>
+    <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/8ee280e8-16a4-4613-ab6a-d76049a64d0c" alt="Calendar" class="calendar-icon"/>
+  </div>
+  <section class="todos-section">
+    <!-- Example of repeated todo entry, real app would loop/insert tasks here -->
+    <div class="todo-bar">
+      <div class="todo-titles">
+        <div class="todo-title">TODO TITLE</div>
+        <div class="todo-sub">TODO SUB TITLE</div>
+      </div>
+      <div class="todo-actions">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/379bbfc0-e1ab-40c8-97ac-4b454f3317e5" alt="Check" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a25163af-50a4-4b07-b62e-1ecb48acd144" alt="Trash" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4fd18356-5b52-4ea7-b3f6-32a86ebaf992" alt="Edit" class="todo-action-icon" />
+      </div>
+    </div>
+    <div class="todo-bar">
+      <div class="todo-titles">
+        <div class="todo-title">TODO TITLE</div>
+        <div class="todo-sub">TODO SUB TITLE</div>
+      </div>
+      <div class="todo-actions">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cb5fee77-1f40-493c-97c6-e7e368eca61b" alt="Check" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/0f307600-02ae-4375-beb6-c75eeb0097c2" alt="Trash" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2c4d9a88-10ff-4471-b181-8aefa45b26a6" alt="Edit" class="todo-action-icon" />
+      </div>
+    </div>
+    <div class="todo-bar">
+      <div class="todo-titles">
+        <div class="todo-title">TODO TITLE</div>
+        <div class="todo-sub">TODO SUB TITLE</div>
+      </div>
+      <div class="todo-actions">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/c31ba01d-a581-46a9-b2a0-f248a4747d88" alt="Check" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/270d7785-39ba-46ec-858a-1f92bbe2d0b3" alt="Trash" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/583b32cf-c8f4-4a7a-8d68-2c0b24f00620" alt="Edit" class="todo-action-icon" />
+      </div>
+    </div>
+    <div class="todo-bar">
+      <div class="todo-titles">
+        <div class="todo-title">TODO TITLE</div>
+        <div class="todo-sub">TODO SUB TITLE</div>
+      </div>
+      <div class="todo-actions">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5a5e6c6e-0eb3-4760-b26b-d8936192d57e" alt="Check" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a4602950-9deb-49bb-9929-a3a26215f595" alt="Trash" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/3289ff17-eabe-4b12-bf98-008bc99ac30b" alt="Edit" class="todo-action-icon" />
+      </div>
+    </div>
+    <div class="todo-bar">
+      <div class="todo-titles">
+        <div class="todo-title">TODO TITLE</div>
+        <div class="todo-sub">TODO SUB TITLE</div>
+      </div>
+      <div class="todo-actions">
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/fc228b2e-4ae9-4005-a7de-06b76c7ddce1" alt="Check" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/643d7c07-aa80-469f-97ca-f2d4b103491e" alt="Trash" class="todo-action-icon" />
+        <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/11d14fef-58d6-43b9-9eb6-931da05302e9" alt="Edit" class="todo-action-icon" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Add New ToDo button floating (absolute) -->
+  <button class="add-todo-btn" aria-label="Add new ToDo">
+    <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/5b98aabb-bf1c-4d15-b56d-91161e637d2f" alt="Add ToDo" class="add-todo-img"/>
+  </button>
+
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <div class="nav-group">
+      <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/09c58a5b-d830-4f06-9eab-83e62f32c91e" alt="Playlist" class="nav-icon"/>
+      <span class="nav-txt">All</span>
+    </div>
+    <div class="nav-group">
+      <img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/45e5cf4a-0a3b-4bed-952a-12eb96a2a1b6" alt="Tick" class="nav-icon"/>
+      <span class="nav-txt nav-txt-completed">Completed</span>
+    </div>
+  </div>
+</body>
+</html>
